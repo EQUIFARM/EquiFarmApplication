@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/splashScreen">
 
-</LinearLayout>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.equifarmapplication.presentation.ui.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainActivity"
+        android:name="com.example.equifarmapplication.presentation.ui.MainActivity"
+        android:label="MainActivity" />
+</navigation>
