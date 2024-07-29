@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<nav-graph xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/splashScreen">
+    android:label="Nav Graph"
+    tools:context=".MainActivity">
 
+    <!-- Splash Screen Fragment -->
     <fragment
-        android:id="@+id/splashScreen"
-        android:name="com.example.equifarmapplication.presentation.ui.SplashScreen"
-        android:label="SplashScreen" >
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.equifarmapplication.presentation.ui.SplashScreenFragment"
+        android:label="SplashScreenFragment">
         <action
-            android:id="@+id/action_splashScreen_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_splashScreenFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 
+    <!-- Main Fragment -->
     <fragment
-        android:id="@+id/mainActivity"
-        android:name="com.example.equifarmapplication.presentation.ui.MainActivity"
-        android:label="MainActivity" />
-</navigation>
+        android:id="@+id/mainFragment"
+        android:name="com.example.equifarmapplication.presentation.ui.MainFragment"
+        android:label="MainFragment" />
+
+</nav-graph>

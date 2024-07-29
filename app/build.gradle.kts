@@ -2,7 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-android")
-    id("kotlin-kapt")
+   id("kotlin-kapt")
+
+
+
 }
 
 android {
@@ -30,6 +33,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -49,6 +53,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.lifecycle.viewmodel.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -64,6 +70,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+//   kapt ("androidx.databinding:databinding-compiler:7.3.1")
 
         // Koin for Android
         implementation ("io.insert-koin:koin-android:3.1.2")
@@ -80,6 +87,53 @@ dependencies {
     dependencies {
         implementation("com.squareup.retrofit2:retrofit:2.9.0")
         implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+        dependencies {
+            // AndroidX Core
+            implementation ("androidx.core:core-ktx:1.9.0")
+
+            // AppCompat
+            implementation ("androidx.appcompat:appcompat:1.5.1")
+
+            // Material Design
+            implementation ("com.google.android.material:material:1.7.0")
+
+            // ConstraintLayout
+            implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+
+            // ViewModel
+            implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+
+            // LiveData
+            implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+
+            // Lifecycle extensions (optional)
+            implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
+
+            // Data Binding Compiler
+//            kapt ("com.android.databinding:compiler:7.3.1")
+
+            // Coroutine Support
+            implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+            implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+            // Testing
+            testImplementation ("junit:junit:4.13.2")
+            androidTestImplementation ("androidx.test.ext:junit:1.1.4")
+            androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+            dependencies {
+                // Other dependencies
+
+                // Navigation component
+                implementation ("androidx.navigation:navigation-fragment-ktx:2.7.0")
+                implementation ("androidx.navigation:navigation-ui-ktx:2.7.0")
+
+                // Optional: for Safe Args (recommended)
+                // implementation "androidx.navigation:navigation-safe-args-plugin:2.7.0"
+            }
+
+// Apply the Safe Args plugin (optional but recommended for type-safe navigation)
+
+        }
     }
 
 }
