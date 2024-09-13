@@ -1,4 +1,4 @@
-package com.example.equifarmapplication.presentation.ui
+package com.example.equifarmapplication.presentation.ui.views.activities
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.equifarmapplication.R
+import com.example.equifarmapplication.presentation.ui.SplashScreenViewModel
 
 class SplashScreen : Fragment() {
 
