@@ -1,4 +1,4 @@
-package com.example.equifarmapplication.presentation
+package com.example.equifarmapplication.presentation.ui.views.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -38,9 +38,21 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
+
+    val koin_bom = "4.0.0-RC2"
+    val room_version = "2.6.1"
+    val lifecycle_version = "2.8.5"
+    val material_version="1.13.0-alpha05"
+    val nav_version ="2.8.0"
+    val retrofit_version="2.0.11"
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -56,19 +68,15 @@ dependencies {
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-        // Koin for Android
-        implementation ("io.insert-koin:koin-android:3.1.2")
-        implementation ("io.insert-koin:koin-android-compat:3.1.2") // Koin AndroidX WorkManager, Navigation, Room, etc.
 
+        implementation("io.insert-koin:koin-bom:$koin_bom")// Koin bom to manage all the koin library versions
+        implementation("io.insert-koin:koin-android")
+        implementation("io.insert-koin:koin-core-coroutines")
+        implementation("io.insert-koin:koin-core")
 
         // Koin for testing
         testImplementation ("io.insert-koin:koin-test:3.1.2")
@@ -77,5 +85,38 @@ dependencies {
         // Android testing
         androidTestImplementation ("androidx.test.ext:junit:1.1.3")
         androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
-    }
+
+        //room
+        implementation ("androidx.room:room-runtime:$room_version")
+        kapt ("androidx.room:room-compiler:$room_version")
+
+        // optional - Kotlin Extensions and Coroutines support for Room
+        implementation("androidx.room:room-ktx:$room_version")
+
+        //material
+        implementation ("com.google.android.material:material:$material_version")
+
+        //navigation
+        // Views/Fragments Integration
+        implementation ("androidx.navigation:navigation-fragment:$nav_version")
+        implementation ("androidx.navigation:navigation-ui:$nav_version")
+
+        //lifecycle
+        // ViewModel
+        implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+        // LiveData
+        implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+        // Annotation processor
+        kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+
+        //retrofit
+        implementation ("com.squareup.retrofit2:retrofit:$retrofit_version")
+        implementation ("com.squareup.retrofit2:converter-gson:$retrofit_version")
+
+        //glide
+        implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+
+}
 
