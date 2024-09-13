@@ -11,6 +11,10 @@ plugins {
 android {
     namespace = "com.example.equifarmapplication"
     compileSdk = 34
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.equifarmapplication"
@@ -31,10 +35,7 @@ android {
             )
         }
     }
-    buildFeatures {
-        dataBinding = true
-        viewBinding = true
-    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -126,6 +127,11 @@ dependencies {
                 // Navigation component
                 implementation ("androidx.navigation:navigation-fragment-ktx:2.7.0")
                 implementation ("androidx.navigation:navigation-ui-ktx:2.7.0")
+                implementation ("androidx.appcompat:appcompat:1.6.1")
+                implementation ("androidx.core:core-ktx:1.10.0")
+                implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+                implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+                implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
 
                 // Optional: for Safe Args (recommended)
                 // implementation "androidx.navigation:navigation-safe-args-plugin:2.7.0"

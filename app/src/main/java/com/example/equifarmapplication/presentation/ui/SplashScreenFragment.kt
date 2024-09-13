@@ -1,32 +1,38 @@
 package com.example.equifarmapplication.presentation.ui
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.equifarmapplication.R
-import com.example.equifarmapplication.databinding.FragmentSplashScreenBinding
+import androidx.fragment.app.viewModels
+
 
 class SplashScreenFragment : Fragment() {
 
-    private lateinit var binding: FragmentSplashScreenBinding
+    private lateinit var binding: SplashScreenBinding
+
+    class SplashScreenBinding {
+
+    }
+
+    private val viewModel: SplashScreenViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout and set up data binding
-        binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
+        binding = SplashScreenBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
 
-        // Simulate a delay to show the splash screen
-        Handler(Looper.getMainLooper()).postDelayed({
-            // Navigate to the next screen after the delay
-            findNavController().navigate(R.id.action_splashScreenFragment_to_mainFragment)
-        }, 3000) // Delay in milliseconds (3 seconds)
+        // Simulate some work here and navigate when done
+        // For example, navigate to the main screen after a delay
+        binding.root.postDelayed({
+            // Navigate to another fragment or activity
+            // findNavController().navigate(R.id.action_splashScreenFragment_to_mainFragment)
+        }, 2000) // 2-second delay
 
         return binding.root
     }

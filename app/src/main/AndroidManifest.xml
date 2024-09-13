@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.equifarmapplication">
 
     <application
@@ -9,12 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EquiFarmApplication">
 
+        <!-- Splash Screen Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"> <!-- Ensure exported is set appropriately -->
+            android:name=".presentation.ui.SplashScreenFragment"
+            android:exported="true"
+            android:theme="@style/Theme.EquiFarmApplication"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" /> <!-- Launcher activity -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
