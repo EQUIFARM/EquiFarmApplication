@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_CartFragment_to_profileFragment"
+            app:destination="@id/ProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/HomeFragment"
@@ -29,6 +32,29 @@
             app:destination="@id/CartFragment" />
         <action
             android:id="@+id/action_ordersFragment_to_homeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FavoritesFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_OrdersFragment"
+            app:destination="@id/OrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MarketFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.MarketFragment"
+        android:label="fragment_market"
+        tools:layout="@layout/fragment_market" >
+        <action
+            android:id="@+id/action_marketFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
     </fragment>
 </navigation>

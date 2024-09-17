@@ -18,6 +18,21 @@
         android:id="@+id/OrdersFragment"
         android:icon="@drawable/ic_orders"
         android:title="Orders"/>
+    <item
+        android:id="@+id/ProfileFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"/>
+
+    <item
+        android:id="@+id/FavoritesFragment"
+        android:icon="@drawable/ic_favorites"
+        android:title="Favourites"/>
+
+
+    <item
+        android:id="@+id/MarketFragment"
+        android:icon="@drawable/ic_market"
+        android:title="Market"/>
 
 
 
