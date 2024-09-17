@@ -43,12 +43,12 @@ android {
 
 dependencies {
 
-    val koin_bom = "4.0.0-RC2"
+    val koin_version = "4.0.0-RC2"
     val room_version = "2.6.1"
     val lifecycle_version = "2.8.5"
     val material_version="1.13.0-alpha05"
     val nav_version ="2.8.0"
-    val retrofit_version="2.0.11"
+    val retrofit_version="2.11.0"
 
 
     implementation(libs.androidx.core.ktx)
@@ -70,20 +70,22 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 
-        implementation("io.insert-koin:koin-bom:$koin_bom")// Koin bom to manage all the koin library versions
-        implementation("io.insert-koin:koin-android")
-        implementation("io.insert-koin:koin-core-coroutines")
-        implementation("io.insert-koin:koin-core")
 
-        // Koin for testing
-        testImplementation ("io.insert-koin:koin-test:3.1.2")
-        testImplementation ("io.insert-koin:koin-test-junit4:3.1.2")
 
-        // Android testing
-        androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-        androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
 
-        //room
+    //koin library
+
+    //koin-bom
+    implementation(platform("io.insert-koin:koin-bom:$koin_version"))
+
+    //koin-core
+    implementation("io.insert-koin:koin-core")
+
+    //koin-android
+    implementation ("io.insert-koin:koin-android:$koin_version")
+
+
+    //room
         implementation ("androidx.room:room-runtime:$room_version")
         kapt ("androidx.room:room-compiler:$room_version")
 
@@ -113,6 +115,9 @@ dependencies {
 
         //glide
         implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+        //intuit dependency
+        implementation ("com.intuit.sdp:sdp-android:1.1.1")
 
 
 }
