@@ -7,7 +7,7 @@
                 android:startColor="#E6E6E6"
                 android:centerColor="#ffffff"
                 android:endColor="#E6E6E6"
-                android:angle="50"
+                android:angle="45"
                 />
              Vertical gradient -->
         </shape>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/CartFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/OrdersFragment"
+        android:name="com.example.equifarmapplication.presentation.views.fragments.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_cartFragment"
+            app:destination="@id/CartFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_homeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+</navigation>
