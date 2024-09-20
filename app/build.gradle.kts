@@ -43,6 +43,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.gridlayout)
     val koin_version = "4.0.0-RC2"
     val room_version = "2.6.1"
     val lifecycle_version = "2.8.5"
@@ -115,10 +116,10 @@ dependencies {
 
         //glide
         implementation ("com.github.bumptech.glide:glide:4.16.0")
-
+   
         //intuit dependency
         implementation ("com.intuit.sdp:sdp-android:1.1.1")
-
+           //card view
 
 }
 
