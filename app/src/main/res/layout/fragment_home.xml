@@ -1,15 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/HomeFragment"
-    tools:context=".presentation.views.fragments.HomeFragment">
+    android:orientation="vertical"
+    android:padding="0dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Toolbar with centered title and menu/bell icons -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:padding="16dp">
+
+        <!-- Menu Icon (Unicode) on the farthest left -->
+        <TextView
+            android:id="@+id/menuIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="8dp"
+            android:text="☰"
+        android:textSize="24sp"
+        android:textColor="@android:color/white" />
+
+        <!-- Title 'EquiFarm' centered -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="EquiFarm"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <!-- Notification Bell Icon (Unicode) on the farthest right -->
+        <TextView
+            android:id="@+id/notificationBell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="8dp"
+            android:text="🔔"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:contentDescription="Notification bell" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- ScrollView for the cards -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home" />
+        android:padding="16dp"
+        android:fillViewport="true">
 
-</FrameLayout>
+        <!-- GridLayout for the 3x3 cards -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:alignmentMode="alignMargins"
+            app:columnCount="3"
+            app:rowCount="3">
+
+            <!-- Empty MaterialCardView 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/white" />
+
+            <!-- Empty MaterialCardView 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="#800000" />
+
+            <!-- Empty MaterialCardView 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <!-- Empty MaterialCardView 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <!-- Empty MaterialCardView 5 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <!-- Empty MaterialCardView 6 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="#800000" />
+
+            <!-- Empty MaterialCardView 7 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <!-- Empty MaterialCardView 8 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <!-- Empty MaterialCardView 9 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@android:color/darker_gray" />
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </ScrollView>
+
+</LinearLayout>

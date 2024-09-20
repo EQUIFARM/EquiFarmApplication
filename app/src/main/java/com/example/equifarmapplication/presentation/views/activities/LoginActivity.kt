@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener {
-            var intent = Intent(this@LoginActivity,MainActivity::class.java)
+            var  intent = Intent(this@LoginActivity,MainActivity::class.java)
             startActivity(intent)
         }
 
