@@ -24,6 +24,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginBottom="@dimen/_40sdp"
                 android:background="@drawable/login_background">
 
                 <!-- Logo -->
@@ -44,45 +45,49 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
+
+                android:paddingEnd="@dimen/_20sdp"
+                android:paddingStart="@dimen/_20sdp"
                 android:background="@android:color/white">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
                 <!-- Title Text "LOGIN PAGE" -->
                 <TextView
                     android:id="@+id/login_page_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:textSize="@dimen/_25sdp"
+                    android:text="Good Morning, Peterson"
+                    android:textSize="@dimen/_20sdp"
                     android:textColor="#000000"
                     android:textStyle="bold"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="40dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/title_desc"/>
+                <TextView
+                    android:id="@+id/title_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign in to continue,"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toStartOf="@id/login_page_title"
+                    app:layout_constraintTop_toBottomOf="@id/login_page_title"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <!-- Login Form -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@android:color/transparent">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_email_login"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Agent id" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="24dp"
                         app:passwordToggleEnabled="true"
                         app:passwordToggleTint="@color/black">
 
@@ -91,8 +96,20 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Password"
+                            android:drawableStart="@drawable/ic_lock"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewForgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Forgot Password"
+                        android:textColor="#800000"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="@dimen/_15sdp"/>
+
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/login_button"
@@ -107,15 +124,6 @@
                         app:iconGravity="textEnd"
                         app:iconTint="#ffffff" />
 
-                    <TextView
-                        android:id="@+id/textViewForgotPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Forgot Password"
-                        android:textColor="#800000"
-                        android:textSize="@dimen/_12sdp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="24dp" />
 
                     <TextView
                         android:id="@+id/tv_register_prompt"
