@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".presentation.views.activities.LoginActivity">
+
+    <!-- Upper part with logo -->
+    <LinearLayout
+        android:id="@+id/upper_part"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:gravity="center"
+        android:background="@drawable/login_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:contentDescription="logoimage"
+            android:src="@drawable/equifarmlogo"/>
+    </LinearLayout>
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/reg_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        app:layout_constraintTop_toBottomOf="@id/upper_part"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textStyle="bold"/>
+
+    <!-- Description TextView -->
+    <TextView
+        android:id="@+id/reg_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Please fill in your details"
+        app:layout_constraintTop_toBottomOf="@id/reg_title"
+        app:layout_constraintStart_toStartOf="@id/reg_title"
+        android:fontFamily="@font/myfont"
+        android:textSize="@dimen/_12sdp"/>
+
+    <!-- First Name TextInputLayout -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/reg_desc"
+        app:layout_constraintStart_toStartOf="@id/reg_desc"
+        app:layout_constraintEnd_toStartOf="@+id/last_name"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:hint="First Name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:inputType="textPersonName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Last Name TextInputLayout -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/reg_desc"
+        app:layout_constraintStart_toEndOf="@id/first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:hint="Last Name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:drawableStart="@drawable/ic_person"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Your Id TextInputLayout -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/first_name"
+        app:layout_constraintStart_toStartOf="@id/first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:hint="Your Id">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:drawableStart="@drawable/ic_id"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Country Code Spinner and Phone Number -->
+    <LinearLayout
+        android:id="@+id/phone_number_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/id"
+        app:layout_constraintStart_toStartOf="@id/id"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_15sdp">
+
+        <!-- Country Code Spinner -->
+        <Spinner
+            android:id="@+id/country_code_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/country_codes"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/spinner_background"/>
+
+        <!-- Phone Number TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Phone Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:drawableStart="@drawable/ic_phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

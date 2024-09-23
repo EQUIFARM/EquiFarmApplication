@@ -6,25 +6,22 @@
     android:orientation="vertical"
     android:padding="0dp">
 
-    <!-- Toolbar with centered title and menu/bell icons -->
-
-    <!-- ScrollView for the cards -->
-
+    <!-- Toolbar with centered title and menu/notification icons -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:layout_height="@dimen/_56sdp"
+        android:background="#800000"
+
         android:padding="5dp">
 
-        <!-- Menu Icon (Unicode) on the farthest left -->
+        <!-- Menu Icon on the farthest left -->
         <TextView
             android:id="@+id/menuIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:padding="10dp"
-            android:paddingTop="@dimen/_5sdp"
             android:text="☰"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
@@ -41,7 +38,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- Notification Bell Icon (Unicode) on the farthest right -->
+        <!-- Notification Bell Icon on the farthest right -->
         <TextView
             android:id="@+id/notificationBell"
             android:layout_width="wrap_content"
@@ -52,7 +49,6 @@
             android:text="🔔"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
-
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -70,32 +66,57 @@
             app:columnCount="3"
             app:rowCount="3">
 
-            <!-- Empty MaterialCardView 1 -->
-
-            <!-- Empty MaterialCardView 2 -->
+            <!-- Card View 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
-                app:layout_column="0"
                 app:layout_columnWeight="1"
-                app:layout_row="0"
                 app:layout_rowWeight="1"
                 app:strokeColor="@color/white"
-                app:strokeWidth="2dp" />
+                app:strokeWidth="2dp">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/insurance"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Services"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 2 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_margin="8dp"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="8dp"
                 app:strokeWidth="4dp"
-                app:strokeColor="#800000" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 3 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/produce"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Produce"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 3 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -104,9 +125,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 4 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/myfarm"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Farm"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 4 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -115,9 +150,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 5 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/training"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Training"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 5 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -126,9 +175,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 6 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/transport"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transport"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 6 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -137,9 +200,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="#800000" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 7 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/support"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extension"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 7 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -148,9 +225,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 8 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/farm_inputs"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Farm Tech"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 8 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -159,9 +250,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
 
-            <!-- Empty MaterialCardView 9 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/farm_inputs"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card View 9 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="120dp"
@@ -170,10 +275,23 @@
                 app:layout_rowWeight="1"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="2dp"
-                app:strokeColor="@android:color/darker_gray" />
+                app:strokeColor="@android:color/darker_gray">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/farm_tech"
+                android:scaleType="centerCrop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Farm Inputs"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.gridlayout.widget.GridLayout>
-
     </ScrollView>
 
     <ImageView
@@ -181,5 +299,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/training" />
+
 
 </LinearLayout>
